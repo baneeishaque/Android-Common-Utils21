@@ -16,8 +16,33 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url "https://nexus.web.cern.ch/nexus/content/groups/public/"
+        }
+        maven {
+            url "https://artifactory.appodeal.com/appodeal-public"
+        }
     }
 }
 
 rootProject.name = "Android-Common-Utils21"
 include ':common21'
+
+include ':common19'
+project(':common19').projectDir = new File(settingsDir, './Utils19/common19')
+
+include ':tests19'
+project(':tests19').projectDir = new File(settingsDir, './Utils19/tests19')
+
+include ':common17'
+project(':common17').projectDir = new File(settingsDir, './Utils19/Utils17/common17')
+
+include ':common16'
+project(':common16').projectDir = new File(settingsDir, './Utils19/Utils17/Utils16/common16')
+
+include ':common14'
+project(':common14').projectDir = new File(settingsDir, './Utils19/Utils17/Utils16/Utils14/common14')
+
+include ':common_resources'
+project(':common_resources').projectDir = new File(settingsDir, './Utils19/Utils17/Utils16/Utils14/Resources/common')
